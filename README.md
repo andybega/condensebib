@@ -18,7 +18,7 @@ This will look for cite keys like "@author:2008" or google-style "@authoryearwor
 Requires **RefManageR** and **stringr**. 
 
 ```r
-source("https://raw.githubusercontent.com/andybega/condensebib/master/reduce-bib.R")
+source("https://raw.githubusercontent.com/andybega/condensebib/master/R/reduce-bib.R")
 ```
 
 
