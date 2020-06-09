@@ -8,11 +8,16 @@ library(stringr)
 #' messages.
 #' 
 #' @param file Path to the .bib file. 
+#' @param quiet Show RefManageR::ReadBib output/warnings?
 #' 
 #' @examples 
 #' master <- read_bib("master.bib")
-read_bib <- function(file, ...) {
-  bib <- suppressWarnings(suppressMessages(RefManageR::ReadBib(file, ...)))
+read_bib <- function(file, quiet = TRUE, ...) {
+  if (isTRUE(quiet)) {
+    return(suppressWarnings(suppressMessages(RefManageR::ReadBib(file, ...))))
+  } else {
+    return(RefManageR::ReadBib(file, ...))
+  }
 }
 
 #' Write a .bib file
@@ -66,7 +71,7 @@ reduce_bib <- function(file, master_bib, out_bib) {
     ))
   }
   write_bib(bib, out_bib)
-  invisible(structure(
+  invisible(list(
     cite_keys = cite_keys,
     bib = bib
   ))
