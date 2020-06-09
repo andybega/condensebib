@@ -1,0 +1,19 @@
+
+library(testthat)
+
+source("../../reduce-bib.R")
+
+test_that("return empty character vector if no matches", {
+  expect_equal(strip_cite_keys(""), character(0))
+})
+
+test_that("match beginning of line", {
+  expect_equal(strip_cite_keys("@valid:2011"), "valid:2011")
+})
+
+test_that("don't match email addresses", {
+  expect_equal(strip_cite_keys("foo@gmail.com"), character(0))
+})
+
+
+
