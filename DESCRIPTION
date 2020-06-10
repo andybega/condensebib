@@ -18,4 +18,5 @@ Imports:
     stringr,
     RefManageR
 Suggests: 
-    testthat
+    testthat,
+    covr

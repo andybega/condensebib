@@ -3,6 +3,7 @@ Condense .bib
 
 <!-- badges: start -->
   [![R build status](https://github.com/andybega/condensebib/workflows/R-CMD-check/badge.svg)](https://github.com/andybega/condensebib/actions)
+[![Codecov test coverage](https://codecov.io/gh/andybega/condensebib/branch/master/graph/badge.svg)](https://codecov.io/gh/andybega/condensebib?branch=master)
 <!-- badges: end -->
 
 Condense a global .bib file used for citations in a Rmarkdown article to a local .bib with only references that are used in the article. 
