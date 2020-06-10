@@ -1,7 +1,4 @@
 
-library(testthat)
-
-source("../../reduce-bib.R")
 
 test_that("return empty character vector if no matches", {
   expect_equal(strip_cite_keys(""), character(0))
@@ -15,7 +12,7 @@ test_that("don't match email addresses", {
   expect_equal(strip_cite_keys("foo@gmail.com"), character(0))
 })
 
-testh_that("cite key with '-' is matched", {
+test_that("cite key with '-' is matched", {
   expect_equal(strip_cite_keys("@doe-smith:2017"), "doe-smith:2017")
 })
 

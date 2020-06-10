@@ -4,6 +4,8 @@ Condense .bib
 Condense a global .bib file used for citations in a Rmarkdown article to a local .bib with only references that are used in the article. 
 
 ```r
+library(condensebib)
+
 reduce_bib(
   file       = "my_paper.Rmd",
   master_bib = "../../central_bib_file.bib",
@@ -18,7 +20,7 @@ This will look for cite keys like "@author:2008" or google-style "@authoryearwor
 Requires **RefManageR** and **stringr**. 
 
 ```r
-source("https://raw.githubusercontent.com/andybega/condensebib/master/R/reduce-bib.R")
+remotes::install_github("andybega/condensebib")
 ```
 
 
