@@ -51,7 +51,7 @@ strip_cite_keys <- function(doc){
   cite_keys <- character(0)
   for(line in doc){
     if (stringr::str_detect(line, "@")) {
-      cite_keys_i <- stringr::str_match_all(line, "(^|[\\[,; ])@([[[:alnum:]]_\\-:]+)")[[1]][, 3]
+      cite_keys_i <- stringr::str_match_all(line, "(^|[\\[,; -])@([[[:alnum:]]_\\-:]+)")[[1]][, 3]
       cite_keys <- c(cite_keys, cite_keys_i)
     }
   }

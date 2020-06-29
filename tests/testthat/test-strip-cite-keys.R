@@ -13,6 +13,6 @@ test_that("don't match email addresses", {
 })
 
 test_that("cite key with '-' is matched", {
-  expect_equal(strip_cite_keys("@doe-smith:2017"), "doe-smith:2017")
+  expect_equal(strip_cite_keys("-@doe-smith:2017"), "doe-smith:2017")
 })
 
