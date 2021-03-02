@@ -4,7 +4,7 @@
 \alias{extract_cite_keys}
 \title{Extract cite keys}
 \usage{
-extract_cite_keys(doc)
+extract_cite_keys(doc, verbose = FALSE)
 }
 \arguments{
 \item{doc}{a string character}
@@ -13,7 +13,8 @@ extract_cite_keys(doc)
 a character vector of extracted cite keys
 }
 \description{
-Extract cite keys like "@foo:2014" from a text (.Rmd, .md) file.
+Extract cite keys like "@foo:2014" or "\\cite\{foo:2014\}" from a markdown
+(.Rmd, .md) or Latex (.tex) file.
 }
 \examples{
 extract_cite_keys("@smith:2015")

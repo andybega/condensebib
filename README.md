@@ -18,7 +18,7 @@ reduce_bib(
 )
 ```
 
-This will look for cite keys like "@author:2008" or google-style "@authoryearword" in the input .Rmd file, extract those cite keys from the master bib, and write them to a local bib. 
+This will look for cite keys like "@author:2008" or google-style "@authoryearword" in the input .Rmd file, extract those cite keys from the master bib, and write them to a local bib. It should work with Latex/natbib-style citation commands as well. 
 
 ## Installation
 
