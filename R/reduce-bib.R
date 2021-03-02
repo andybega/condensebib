@@ -34,29 +34,6 @@ write_bib <- function(bib, ...) {
   RefManageR::WriteBib(bib, ...)
 }
 
-#' Strip cite keys
-#' 
-#' Strip cite keys like "@foo:2014" from a text (.Rmd, .md) file. 
-#' 
-#' @param doc a string character
-#' 
-#' @returns a character vector of extracted cite keys
-#' 
-#' @export
-#' 
-#' @examples 
-#' strip_cite_keys("@smith:2015")
-#' strip_cite_keys("@smith2015first")
-strip_cite_keys <- function(doc){
-  cite_keys <- character(0)
-  for(line in doc){
-    if (stringr::str_detect(line, "@")) {
-      cite_keys_i <- stringr::str_match_all(line, "(^|[\\[,; -])@([[[:alnum:]]_\\-:]+)")[[1]][, 3]
-      cite_keys <- c(cite_keys, cite_keys_i)
-    }
-  }
-  return(unique(cite_keys))
-}
 
 #' Reduce a central .bib file down to used elements
 #' 
@@ -70,7 +47,7 @@ strip_cite_keys <- function(doc){
 #' @export
 reduce_bib <- function(file, master_bib, out_bib) {
   doc <- readLines(file)
-  cite_keys <- strip_cite_keys(doc)
+  cite_keys <- extract_cite_keys(doc)
   master    <- read_bib(master_bib)
   bib       <- master[cite_keys]
   if (!all(cite_keys %in% names(master))) {
