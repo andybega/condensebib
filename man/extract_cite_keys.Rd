@@ -8,6 +8,8 @@ extract_cite_keys(doc, verbose = FALSE)
 }
 \arguments{
 \item{doc}{a string character}
+
+\item{verbose}{print extra progress messages}
 }
 \value{
 a character vector of extracted cite keys

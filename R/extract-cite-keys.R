@@ -4,6 +4,7 @@
 #' (.Rmd, .md) or Latex (.tex) file. 
 #' 
 #' @param doc a string character
+#' @param verbose print extra progress messages
 #' 
 #' @returns a character vector of extracted cite keys
 #' 
