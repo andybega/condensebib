@@ -4,7 +4,7 @@
 \alias{reduce_bib}
 \title{Reduce a central .bib file down to used elements}
 \usage{
-reduce_bib(file, master_bib, out_bib)
+reduce_bib(file, master_bib, out_bib, ...)
 }
 \arguments{
 \item{file}{path to the target .Rmd file}
@@ -13,6 +13,8 @@ reduce_bib(file, master_bib, out_bib)
 for that matter)}
 
 \item{out_bib}{path/name of the output .bib file to write}
+
+\item{...}{Arguments passed to \code{\link[RefManageR:ReadBib]{RefManageR::ReadBib()}}}
 }
 \description{
 Condense a master.bib file to only the references that are used in a paper.

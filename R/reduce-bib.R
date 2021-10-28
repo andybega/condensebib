@@ -43,12 +43,13 @@ write_bib <- function(bib, ...) {
 #' @param master_bib path to whistle/master.bib (or any other central .bib file 
 #'   for that matter)
 #' @param out_bib path/name of the output .bib file to write
+#' @param ... Arguments passed to [RefManageR::ReadBib()]
 #' 
 #' @export
-reduce_bib <- function(file, master_bib, out_bib) {
+reduce_bib <- function(file, master_bib, out_bib, ...) {
   doc <- readLines(file)
   cite_keys <- extract_cite_keys(doc)
-  master    <- read_bib(master_bib)
+  master    <- read_bib(master_bib, ...)
   bib       <- master[cite_keys]
   if (!all(cite_keys %in% names(master))) {
     missing <- cite_keys[!cite_keys %in% names(master)]
