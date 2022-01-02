@@ -21,7 +21,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     stringr,
-    RefManageR
+    RefManageR,
+    bibtex
 Suggests: 
     testthat,
     covr

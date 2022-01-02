@@ -34,6 +34,12 @@ write_bib <- function(bib, ...) {
   RefManageR::WriteBib(bib, ...)
 }
 
+## RefMangageR actually suggests `bibtex`
+## But it won't make it available to this package and write_bib needs bibtex
+## We need to make it explicit
+.write <- function(x) {
+  bibtex::write.bib(x)
+}
 
 #' Reduce a central .bib file down to used elements
 #' 
