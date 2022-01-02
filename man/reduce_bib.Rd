@@ -7,7 +7,7 @@
 reduce_bib(file, master_bib, out_bib, ...)
 }
 \arguments{
-\item{file}{path to the target .Rmd file}
+\item{file}{path to the target .Rmd file; or a vector of .Rmd files}
 
 \item{master_bib}{path to whistle/master.bib (or any other central .bib file
 for that matter)}
@@ -17,5 +17,6 @@ for that matter)}
 \item{...}{Arguments passed to \code{\link[RefManageR:ReadBib]{RefManageR::ReadBib()}}}
 }
 \description{
-Condense a master.bib file to only the references that are used in a paper.
+Condense a master.bib file to only the references that are used in a paper or
+multiple papers.
 }

@@ -2,18 +2,23 @@ Package: condensebib
 Title: Condense a Central Bibliography to Locally-needed Subset
 Version: 0.1.0
 Authors@R: 
-    person(given = "Andreas",
+    c(person(given = "Andreas",
            family = "Beger",
            role = c("aut", "cre"),
            email = "adbeger@gmail.com",
-           comment = c(ORCID = "0000-0003-1883-3169"))
+           comment = c(ORCID = "0000-0003-1883-3169")),
+      person(given = "Chung-hong",
+	   family = "Chan",
+	   role = c("ctb"),
+	   email = "chainsawtiney@gmail.com",
+	   comment = c(ORCID = "0000-0002-6232-7530")))
 Description: Condense a large central .bib file to a smaller local version that
     only contains references that are used in a local Rmarkdown document.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1.9001
+RoxygenNote: 7.1.2
 Imports: 
     stringr,
     RefManageR

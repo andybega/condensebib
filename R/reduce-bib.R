@@ -37,9 +37,10 @@ write_bib <- function(bib, ...) {
 
 #' Reduce a central .bib file down to used elements
 #' 
-#' Condense a master.bib file to only the references that are used in a paper.
+#' Condense a master.bib file to only the references that are used in a paper or
+#' multiple papers.
 #' 
-#' @param file path to the target .Rmd file
+#' @param file path to the target .Rmd file; or a vector of .Rmd files
 #' @param master_bib path to whistle/master.bib (or any other central .bib file 
 #'   for that matter)
 #' @param out_bib path/name of the output .bib file to write
@@ -47,8 +48,8 @@ write_bib <- function(bib, ...) {
 #' 
 #' @export
 reduce_bib <- function(file, master_bib, out_bib, ...) {
-  doc <- readLines(file)
-  cite_keys <- extract_cite_keys(doc)
+  doc <- lapply(file, readLines)
+  cite_keys <- sort(unique(unlist(lapply(doc, extract_cite_keys))))
   master    <- read_bib(master_bib, ...)
   bib       <- master[cite_keys]
   if (!all(cite_keys %in% names(master))) {
